@@ -212,9 +212,7 @@ Now you can modify [placements](http://unityads.unity3d.com/help/monetization/pl
 
 For comprehensive documentation on the **Unity Ads Scipting API**, [click here](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html)
 
-For additional examples and troubleshooting, see the [Monetization documentation](http://unityads.unity3d.com/help/monetization/integration-guide-unity).
-
-For questions, please post them to the [Unity Ads forum](http://forum.unity3d.com/forums/unity-ads.67), or contact Support at unityads-support@unity3d.com
+Please forward additional questions to the [Unity Ads forum](http://forum.unity3d.com/forums/unity-ads.67), or contact Support at unityads-support@unity3d.com
 
 [ads-dashb-1]: https://s3.amazonaws.com/ads-image-hosting/ads-dashb-1.png
 [ads-dashb-2]: https://s3.amazonaws.com/ads-image-hosting/ads-dashb-2.png
