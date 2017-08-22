@@ -1,11 +1,23 @@
 
 # Unity Editor Integration
 
-This article details the two methods for integrating **Unity Ads** in the Unity engine: 
+Contents
+- 1. Setting Build Targets
+- 2. Enabling the Ads Service
+	- Services Window Method
+	- Asset Package Method
+- 3. Showing an Ad
+- 4. Rewarding Players for Watching Ads
+	- Example Rewarded Ads Button Code
+- 5. Managing Settings in the Ads Dashboard
+
+This article details the two methods for integrating **Unity Ads** in the Unity engine:
 - **Services Window Integration**
 - **Asset Package Integration**
 
-These methods are very similar, however the few exceptions are covered below. 
+These methods are similar, however the few exceptions are covered in each section.
+
+
 
 For the complete **Unity Ads Scipting API**, [click here](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html)
 
@@ -22,7 +34,7 @@ First, configure your project for a supported platform.
 
 This process varies slightly depending on your integration preference.
 
-#### Using the Services Window Method
+#### Services Window Method
 Configure your project for **Unity Services**. This requires setting an **Organization** and **Project Name**.
 
 ![Services Window][services-window]
@@ -34,7 +46,7 @@ For detailed instructions on doing so, [click here](https://docs.unity3d.com/Man
 3. Click the **Enable** button to toggle the Ads service on.
 3. Specify whether your product targets children under 13, then click **Continue**.
 
-#### Using the Asset Package Method
+#### Asset Package Method
 Before integrating the Asset Package, you'll need to create a **Unity Ads Game ID**.
 
 1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads Dashboard</a>, and select **Add new project**:
@@ -49,37 +61,25 @@ Before integrating the Asset Package, you'll need to create a **Unity Ads Game I
 
 ![Locate your game ID][new-project-3]
 
-## Adding the Code
-Now that you've enabled the service, you can implement code in any script to display ads. The code varies slightly depending on your integration preference.
-
-#### Using the Services Window Method
-Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
-- Declare the Unity Ads namespace in the header of your script: 
+4. Declare the Unity Ads namespace in the header of your script:
 
  	`using UnityEngine.Advertisements;`
 
-- Call the **Show()** method to display an ad:
-
-	`Advertisement.Show()`
-
-#### Using Asset Package Method
-- Declare the Unity Ads namespace in the header of your script:
-
- 	`using UnityEngine.Advertisements;`
-
-- Inititalize Unity Ads in your script (Note: This call usually goes in the Start() function that's already defined):
+5. Inititalize Unity Ads in your script (Note: This call usually goes in the Start() function that's already defined):
 
 	`Advertisement.Initialize(string gameId)`
 
-- Call the **Show()** method to display an ad:
+## Showing an Ad
+Now that you've enabled the service, you can implement code in any script to display ads.
 
-	```csharp
-	if( Advertisement.IsReady() )
-	{
-		Advertisement.Show(string placement)
-	}
-	```
-> Note: It generally takes several seconds to inititalize Unity Ads
+Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
+1. Declare the Unity Ads namespace in the header of your script: 
+
+ 	`using UnityEngine.Advertisements;`
+
+2. Call the **Show()** method to display an ad:
+
+	`Advertisement.Show()`
 
 ## Rewarding Players for Watching Ads
 
@@ -127,6 +127,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
+//-- This section only necessary for Asset Package integration --//
+
+#if UNITY_IOS
+private string gameId = "1486551";
+#elif UNITY_ANDROID
+private string gameId = "1486550";
+#endif
+
+//--------------------------------------------------------------//
+
+	ColorBlock newColorBlock = new ColorBlock();
+	public Color green = new Color(0.1F, 0.8F, 0.1F, 1.0F);
+
 [RequireComponent(typeof(Button))]
 public class UnityAdsButton : MonoBehaviour
 {
@@ -138,6 +151,17 @@ public class UnityAdsButton : MonoBehaviour
 	{	
 		m_Button = GetComponent<Button>();
 		if (m_Button) m_Button.onClick.AddListener(ShowAd);
+		
+		if (Advertisement.isSupported) {
+			Advertisement.Initialize (gameId, true);
+		}
+		
+		//-- This section only necessary for Asset Package integration --//
+		
+		if (Advertisement.isSupported) {
+			Advertisement.Initialize (gameId, true);
+		}
+		//---------------------------------------------------------------//
 	}
 
 	void Update ()
