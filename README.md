@@ -1,7 +1,11 @@
 
 # Unity Editor Integration
 
-Contents
+This article covers both methods for integrating **Unity Ads** in the Unity engine:
+- **Services Window Integration**
+- **Asset Package Integration**
+
+### Contents
 - Setting Build Targets
 - Enabling the Ads Service
 	- Services Window Method
@@ -11,15 +15,7 @@ Contents
 	- Example Rewarded Ads Button Code
 - Managing Settings in the Ads Dashboard
 
-This article details the two methods for integrating **Unity Ads** in the Unity engine:
-- **Services Window Integration**
-- **Asset Package Integration**
-
-These methods are similar, however the few exceptions are covered in each section.
-
-
-
-For the complete **Unity Ads Scipting API**, [click here](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html)
+------------------------------------------------------
 
 ## Setting Build Targets
 
