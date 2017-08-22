@@ -2,10 +2,10 @@
 # Unity Editor Integration
 
 This article details the two methods for integrating Unity Ads in the Unity engine: 
-- [Unity Ads Services Window Integration](unity-ads-services-window-integration)
-- [Unity Ads Asset Package Integration](unity-ads-asset-package-integration)
+- [Unity Ads Services Window Integration](services-window-integration)
+- [Unity Ads Asset Package Integration](asset-package-integration)
 
-[The Unity Ads Scipting API can be found here](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html)
+For the complete **Unity Ads Scipting API**, [click here](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html)
 
 ## Services Window Integration
 Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
