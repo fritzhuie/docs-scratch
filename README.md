@@ -293,4 +293,4 @@ For questions, please post them to the [Unity Ads forum](http://forum.unity3d.co
 [new-project-1]: https://s3.amazonaws.com/ads-image-hosting/new1.png
 [new-project-2]: https://s3.amazonaws.com/ads-image-hosting/new2.png
 [new-project-3]: https://s3.amazonaws.com/ads-image-hosting/new4.png
-[services-window]: https://s3.amazonaws.com/ads-image-hosting/services-window.png
+[services-window]: https://s3.amazonaws.com/ads-image-hosting/services.png
