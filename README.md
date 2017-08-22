@@ -142,11 +142,7 @@ From here, you can modify placements and other game-specific settings.
 
 > Note: Additional information on placements can be found in our [placements Documentation](http://unityads.unity3d.com/help/monetization/placements).
 
-_For additional info, please see the [Unity Ads forum](http://forum.unity3d.com/forums/unity-ads.67), [Unity Ads Knowledge Base](http://unityads.unity3d.com/help/monetization/getting-started), [Unity Ads Documentation](https://docs.unity3d.com/Manual/UnityAdsHowTo.html), [Unity Support Knowledge Base](https://support.unity3d.com/hc/en-us/sections/201163835-Ads), or contact us directly at unityads-support@unity3d.com._
-
 ## Unity Ads Asset Package Integration
-
-> Updated: August, 2017
 
 ### Create a Game ID in the Unity Ads dashboard
 
@@ -154,15 +150,15 @@ When integrating the Asset Package, you'll need to create a Unity Ads game ID.
 
 1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads dashboard</a>, and create a new game project:
 
-![Create a new game project](images/new1.png)
+![Create a new game project][new-project-1]
 
 2. Select iOS, Android, or both:
 
-![Select your platform](images/new2.png)
+![Select your platform][new-project-2]
 
 3. Locate the platform-specific GAME ID and save it for later:
 
-![Locate your game ID](images/new4.png)
+![Locate your game ID][new-project-3]
 
 Additional information on placements and dashboard settings can be found in our [placements Documentation](http://unityads.unity3d.com/help/monetization/placements).
 
