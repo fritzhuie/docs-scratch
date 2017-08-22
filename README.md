@@ -2,14 +2,14 @@
 # Unity Editor Integration
 
 Contents
-- 1. Setting Build Targets
-- 2. Enabling the Ads Service
+1. Setting Build Targets
+2. Enabling the Ads Service
 	- Services Window Method
 	- Asset Package Method
-- 3. Showing an Ad
-- 4. Rewarding Players for Watching Ads
+3. Showing an Ad
+4. Rewarding Players for Watching Ads
 	- Example Rewarded Ads Button Code
-- 5. Managing Settings in the Ads Dashboard
+5. Managing Settings in the Ads Dashboard
 
 This article details the two methods for integrating **Unity Ads** in the Unity engine:
 - **Services Window Integration**
