@@ -2,8 +2,8 @@
 # Unity Editor Integration
 
 This article details the two methods for integrating **Unity Ads** in the Unity engine: 
-- [Unity Ads Services Window Integration](services-window-integration)
-- [Unity Ads Asset Package Integration](asset-package-integration)
+- **Services Window Integration**
+- **Asset Package Integration**
 
 These methods are very similar, however the few exceptions are covered below. 
 
@@ -22,7 +22,7 @@ First, configure your project for a supported platform.
 
 This process varies slightly depending on your integration preference.
 
-#### Using the Services Window
+#### Using the Services Window Method
 Configure your project for **Unity Services**. This requires setting an **Organization** and **Project Name**.
 
 ![Services Window > Ads][services-window]
@@ -34,7 +34,7 @@ For detailed instructions on doing so, [click here](https://docs.unity3d.com/Man
 3. Click the **Enable** button to toggle the Ads service on.
 3. Specify whether your product targets children under 13, then click **Continue**.
 
-#### Using the Asset Package
+#### Using the Asset Package Method
 Before integrating the Asset Package, you'll need to create a **Unity Ads Game ID**.
 
 1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads Dashboard</a>, and select **Add new project**:
@@ -52,7 +52,7 @@ Before integrating the Asset Package, you'll need to create a **Unity Ads Game I
 ## Adding the Code
 Now that you've enabled the service, you can implement code in any script to display ads. The code varies slightly depending on your integration preference.
 
-#### Using the Services Window
+#### Using the Services Window Method
 Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
 - Declare the Unity Ads namespace in the header of your script: 
 
@@ -62,7 +62,7 @@ Unity Ads is available from the Services Window in Unity **verson 5.2** or later
 
 	`Advertisement.Show()`
 
-#### Using Asset Package
+#### Using Asset Package Method
 - Declare the Unity Ads namespace in the header of your script:
 
  	`using UnityEngine.Advertisements;`
