@@ -25,7 +25,7 @@ This process varies slightly depending on your integration preference.
 #### Using the Services Window Method
 Configure your project for **Unity Services**. This requires setting an **Organization** and **Project Name**.
 
-![Services Window > Ads][services-window]
+![Services Window][services-window]
 
 For detailed instructions on doing so, [click here](https://docs.unity3d.com/Manual/SettingUpProjectServices.html). Once you've configured your project for Services, enable **Ads**.
 
