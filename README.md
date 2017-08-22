@@ -4,7 +4,7 @@ Contents
 [Unity Ads Asset Package Integration](unity-ads-asset-package-integration)
 
 
-## Unity Ads Services Window Integration
+# Unity Ads Services Window Integration
 Unity Ads is available in the Services Window in **Unity 5.2 or later**.
 
 #### Enable the Ads Service
@@ -142,7 +142,9 @@ From here, you can modify placements and other game-specific settings.
 
 > Note: Additional information on placements can be found in our [placements Documentation](http://unityads.unity3d.com/help/monetization/placements).
 
-## Unity Ads Asset Package Integration
+-------------------------------------------------------------------------
+
+# Unity Ads Asset Package Integration
 
 ### Create a Game ID in the Unity Ads dashboard
 
