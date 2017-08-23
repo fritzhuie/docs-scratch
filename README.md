@@ -123,6 +123,7 @@ Use this code to create a rewarded ads Button that displays an ad when pressed, 
 1. Select **Game Object** > **UI** > **Button** to add a **Button** to your scene.
 2. With the Button selected, click **Add Component** > **New Script** to add a Script Component to the Button.
 3. Open the Script you created, and add the following code:
+
 	> Note: Lines of code that are specific to Asset Package integration are called out in comments. 
 
 ```csharp
