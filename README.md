@@ -22,7 +22,8 @@ This article covers both methods for integrating **Unity Ads** in the Unity engi
 First, configure your project for a supported platform.
 
 1. Open your game project, or create a new Unity project.
-2. Select **Edit** > **Build Settings**, and set the platform to **iOS** or **Android**.
+2. Select **Edit** > **Build Settings** to open the build targets window.
+3. Set the platform to **iOS** or **Android**, then click **Switch Platform**.
 
 ![Build Settings][build-settings]
 
@@ -31,29 +32,29 @@ First, configure your project for a supported platform.
 This process varies slightly depending on your integration preference.
 
 #### Services Window Method
-Configure your project for **Unity Services**. This requires setting an **Organization** and **Project Name**.
+First, configure your project for **Unity Services**. This requires setting an **Organization** and **Project Name**. For a detailed walkthrough of this process, [click here](https://docs.unity3d.com/Manual/SettingUpProjectServices.html). 
 
-![Services Window][services-window]
+Now that you've enabled Services, you can enable **Ads**:
 
-For detailed instructions on doing so, [click here](https://docs.unity3d.com/Manual/SettingUpProjectServices.html). Once you've configured your project for Services, enable **Ads**.
-
-1. Select **Window** > **Services** to open the Services Window.
-2. Select **Ads** from the Services Window menu
+1. Select **Window** > **Services** to open the **Services Window**.
+2. Select **Ads** from the Services Window menu.
 3. Click the **Enable** button to toggle the Ads service on.
 3. Specify whether your product targets children under 13, then click **Continue**.
+
+![Services Window][services-window]
 
 #### Asset Package Method
 Before integrating the Asset Package, you'll need to create a **Unity Ads Game ID**.
 
-1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads Dashboard</a>, and select **Add new project**:
+1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads Dashboard</a>, and select **Add new project**.
 
 ![Create a new game project][new-project-1]
 
-2. Next, select applicable platforms (**iOS**, **Android**, or **both**):
+2. Select applicable platforms (**iOS**, **Android**, or **both**).
 
 ![Select your platform][new-project-2]
 
-3. Finally, locate the platform-specific **Game ID** and copy it for later:
+3. Locate the platform-specific **Game ID** and copy it for later.
 
 ![Locate your game ID][new-project-3]
 
@@ -61,19 +62,23 @@ Before integrating the Asset Package, you'll need to create a **Unity Ads Game I
 
  	`using UnityEngine.Advertisements;`
 
-5. Inititalize Unity Ads in your script (Note: This call usually goes in the Start() function that's already defined):
+5. Inititalize Unity Ads in your script using the copied **Game ID** string:
 
 	`Advertisement.Initialize(string gameId)`
+	
+> Note: This call typically goes in the **Start()** function of your code.
 
-## Showing an Ad
-Now that you've enabled the service, you can implement code in any script to display ads.
+## Showing Ads
 
-Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
+> Note: Unity Ads is available from the Services Window in Unity **verson 5.2** or later.
+
+Now that you've enabled the service, you can implement this simple code in any script to display ads.
+
 1. Declare the Unity Ads namespace in the header of your script: 
 
  	`using UnityEngine.Advertisements;`
 
-2. Call the **Show()** method to display an ad:
+2. Call the **Show()** function to display an ad:
 
 	`Advertisement.Show()`
 
@@ -85,7 +90,8 @@ To reward players for completing a video ad, use the **HandleShowResult** callba
 
 1. In your script, add a callback method.
 2. Pass the method as a parameter when when calling **Show()**.
-3. Call **Show()** with the **"rewardedVideo"** placement to make the video unskippable. (Note: for more detailed information on placements, [click here](https://unityads.unity3d.com/help/monetization/placements).)
+3. Call **Show()** with the **"rewardedVideo"** placement to make the video unskippable. 
+> Note: for more detailed information on placements, [click here](https://unityads.unity3d.com/help/monetization/placements).)
 
 ```
 void ShowRewardedVideo ()
@@ -112,18 +118,19 @@ void HandleShowResult (ShowResult result)
 
 #### Example Rewarded Ads Button Code
 
-Use this code to create a rewarded ads Button that displays an ad when pressed so long as ads are available.
+Use this code to create a rewarded ads Button that displays an ad when pressed, so long as ads are available.
 
-  1. Select **Game Object** > **UI** > **Button** to add a **Button** to your scene.
-  2. With the Button selected, click **Add Component** > **New Script** to add a Script Component to the Button
-  3. Open the Script you created, and add the following code:
+1. Select **Game Object** > **UI** > **Button** to add a **Button** to your scene.
+2. With the Button selected, click **Add Component** > **New Script** to add a Script Component to the Button.
+3. Open the Script you created, and add the following code:
+> Note: Lines of code that are specific to Asset Package integration are called out in comments. 
 
 ```csharp
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
-//-- This section only necessary for Asset Package integration --//
+//-- The following section is only necessary for Asset Package integration --//
 
 #if UNITY_IOS
 private string gameId = "1486551";
@@ -131,7 +138,7 @@ private string gameId = "1486551";
 private string gameId = "1486550";
 #endif
 
-//--------------------------------------------------------------//
+//---------------------------------------------------------------------------//
 
 	ColorBlock newColorBlock = new ColorBlock();
 	public Color green = new Color(0.1F, 0.8F, 0.1F, 1.0F);
@@ -152,12 +159,12 @@ public class UnityAdsButton : MonoBehaviour
 			Advertisement.Initialize (gameId, true);
 		}
 		
-		//-- This section only necessary for Asset Package integration --//
+		//-- The following section is only necessary for Asset Package integration --//
 		
 		if (Advertisement.isSupported) {
 			Advertisement.Initialize (gameId, true);
 		}
-		//---------------------------------------------------------------//
+		//---------------------------------------------------------------------------//
 	}
 
 	void Update ()
@@ -188,19 +195,19 @@ public class UnityAdsButton : MonoBehaviour
 }
 ```
 
-Press the Editor's **Play** button to test the Ads Button integration.
+Press **Play** in the editor to test the Ads Button integration.
 
-For questions about this code, please see the [Unity Ads forum](http://forum.unity3d.com/forums/unity-ads.67) or contact Support at unityads-support@unity3d.com.
+For questions about this code, please see the [Unity Ads forum](http://forum.unity3d.com/forums/unity-ads.67), or contact Support at unityads-support@unity3d.com.
 
 -------------------------------------------------------------------------
 
 ## Managing Settings in the Ads Dashboard
 
-Log in to the [Unity Ads dashboard](https://dashboard.unityads.unity3d.com/Dashboard) using your UDN Account, then locate the project for your game.
+Log in to the [Unity Ads dashboard](https://dashboard.unityads.unity3d.com/Dashboard) using your **Unity Developer Network Account**, then locate the project for your game.
 
 ![dashboard][ads-dashb-1]
 
-Next, select a platform (iOS or Android).
+Next, select an applicable platform (**iOS** or **Android**).
 
 ![dashboard][ads-dashb-2]
 
