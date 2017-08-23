@@ -46,7 +46,7 @@ Now that you've enabled Services, you can enable **Ads**:
 #### Asset Package Method
 Before integrating the Asset Package, you'll need to create a **Unity Ads Game ID**.
 
-1. Navigate to <a href="https://dashboard.unityads.unity3d.com" target="_blank">the Unity Ads Dashboard</a>, and select **Add new project**.
+1. Navigate to the <a href="https://dashboard.unityads.unity3d.com" target="_blank">Unity Ads Dashboard</a>, and select **Add new project**.
 
 ![Create a new game project][new-project-1]
 
