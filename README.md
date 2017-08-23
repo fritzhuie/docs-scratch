@@ -66,7 +66,7 @@ Before integrating the Asset Package, you'll need to create a **Unity Ads Game I
 
 	`Advertisement.Initialize(string gameId)`
 	
-> Note: This call typically goes in the **Start()** function of your code.
+	> Note: This call typically goes in the **Start()** function of your code.
 
 ## Showing Ads
 
