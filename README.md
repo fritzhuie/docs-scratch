@@ -75,16 +75,14 @@ With the Service enabled, you can implement the code in any script to display ad
 
 1. Declare the Unity Ads namespace, `UnityEngine.Advertisement` in the header of your script (see [ UnityEngine.Advertisements](https://docs.unity3d.com/ScriptReference/Advertisements.Advertisement.html) documentation): <br/>
       
-      ```
-         using UnityEngine.Advertisements;
-         
-       ```
+   ```
+   using UnityEngine.Advertisements;   
+   ```
 
 2. Call the `Show()` function to display an ad: <br/> 
 
     ```
     Advertisement.Show()
-    
     ```
 
 ## Rewarding players for watching ads
@@ -131,7 +129,6 @@ Use the code below to create a rewarded ads button. The ads button displays an a
 3. [Open the script](https://docs.unity3d.com/Manual/CreatingAndUsingScripts.html) and add the following code: <br/> <br/>**Note**: The two sections of code that are specific to Asset Package integration are called out in comments. <br/> 
 
     ```
-    
          using UnityEngine;
          using UnityEngine.UI;
          using UnityEngine.Advertisements;
@@ -201,7 +198,6 @@ Use the code below to create a rewarded ads button. The ads button displays an a
     		     }
     	     }
          }
-     
       ```
 
 4. Press __Play__ in the Unity Editor to test the Ads button integration.
