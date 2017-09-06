@@ -97,7 +97,7 @@ To reward players for completing a video ad, use the `HandleShowResult` callback
 
 **Note**: See [Unity Ads documentation](https://unityads.unity3d.com/help/monetization/placements) for more detailed information on `placements`.
 
-```
+```cs
 void ShowRewardedVideo ()
 {
 	var options = new ShowOptions();
@@ -128,7 +128,7 @@ Use the code below to create a rewarded ads button. The ads button displays an a
 2. Select the button you added to your Scene, then add a script component to it using the [Inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html). (In the Inspector, select  __Add Component__ > __New Script__ .)
 3. [Open the script](https://docs.unity3d.com/Manual/CreatingAndUsingScripts.html) and add the following code: <br/> <br/>**Note**: The two sections of code that are specific to Asset Package integration are called out in comments. <br/> 
 
-    ```
+    ``` cs
          using UnityEngine;
          using UnityEngine.UI;
          using UnityEngine.Advertisements;
