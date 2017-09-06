@@ -93,7 +93,7 @@ To reward players for completing a video ad, use the `HandleShowResult` callback
 
 1. In your script, add a callback method.
 2. Pass the method as a parameter when when calling `Show()`.
-3. Call `Show()` with the `"rewardedVideo"` placement to make the video unskippable. 
+3. Call `Show()` with the `"rewardedVideo"` placement to make the video unskippable.
 
 **Note**: See [Unity Ads documentation](https://unityads.unity3d.com/help/monetization/placements) for more detailed information on `placements`.
 
@@ -128,77 +128,77 @@ Use the code below to create a rewarded ads button. The ads button displays an a
 2. Select the button you added to your Scene, then add a script component to it using the [Inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html). (In the Inspector, select  __Add Component__ > __New Script__ .)
 3. [Open the script](https://docs.unity3d.com/Manual/CreatingAndUsingScripts.html) and add the following code: <br/> <br/>**Note**: The two sections of code that are specific to Asset Package integration are called out in comments. <br/> 
 
-    ``` cs
-         using UnityEngine;
-         using UnityEngine.UI;
-         using UnityEngine.Advertisements;
-    
-         //---------- ONLY NECESSARY FOR ASSET PACKAGE INTEGRATION: ----------//
-         
-         #if UNITY_IOS
-         private string gameId = "1486551";
-         #elif UNITY_ANDROID
-         private string gameId = "1486550";
-         #endif
-    
-         //-------------------------------------------------------------------//
-    
-       	     ColorBlock newColorBlock = new ColorBlock();
-    	     public Color green = new Color(0.1F, 0.8F, 0.1F, 1.0F);
-    
-         [RequireComponent(typeof(Button))]
-         public class UnityAdsButton : MonoBehaviour
-         {
-     	     Button m_Button;
-    	
-    	     public string placementId = "rewardedVideo";
-    
-    	     void Start ()
-    	     {	
-    	 	     m_Button = GetComponent<Button>();
-    		     if (m_Button) m_Button.onClick.AddListener(ShowAd);
-    		
-    		     if (Advertisement.isSupported) {
-    			     Advertisement.Initialize (gameId, true);
-    		     }
-    		
-    		     //---------- ONLY NECESSARY FOR ASSET PACKAGE INTEGRATION: ----------//
-    		
-    		     if (Advertisement.isSupported) {
-    			     Advertisement.Initialize (gameId, true);
-    		     }
-    		
-    		     //-------------------------------------------------------------------//
-    	    
-    	     }
-    
-    	     void Update ()
-    	     {
-    		     if (m_Button) m_Button.interactable = Advertisement.IsReady(placementId);
-    	     }
-    
-    	     void ShowAd ()
-    	     {
-    		     var options = new ShowOptions();
-    		     options.resultCallback = HandleShowResult;
-    
-    		     Advertisement.Show(placementId, options);
-    	     }
-    
-    	     void HandleShowResult (ShowResult result)
-    	     {
-    		     if(result == ShowResult.Finished) {
-    			     Debug.Log("Video completed - Offer a reward to the player");
-    
-    		     }else if(result == ShowResult.Skipped) {
-    			     Debug.LogWarning("Video was skipped - Do NOT reward the player");
-    
-    		     }else if(result == ShowResult.Failed) {
-    			     Debug.LogError("Video failed to show");
-    		     }
-    	     }
-         }
-      ```
+``` cs
+ using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Advertisements;
+
+//---------- ONLY NECESSARY FOR ASSET PACKAGE INTEGRATION: ----------//
+
+#if UNITY_IOS
+private string gameId = "1486551";
+#elif UNITY_ANDROID
+private string gameId = "1486550";
+#endif
+
+//-------------------------------------------------------------------//
+
+ColorBlock newColorBlock = new ColorBlock();
+public Color green = new Color(0.1F, 0.8F, 0.1F, 1.0F);
+
+[RequireComponent(typeof(Button))]
+public class UnityAdsButton : MonoBehaviour
+{
+    Button m_Button;
+
+    public string placementId = "rewardedVideo";
+
+    void Start ()
+    {	
+        m_Button = GetComponent<Button>();
+        if (m_Button) m_Button.onClick.AddListener(ShowAd);
+
+        if (Advertisement.isSupported) {
+            Advertisement.Initialize (gameId, true);
+        }
+
+        //---------- ONLY NECESSARY FOR ASSET PACKAGE INTEGRATION: ----------//
+
+        if (Advertisement.isSupported) {
+            Advertisement.Initialize (gameId, true);
+        }
+
+        //-------------------------------------------------------------------//
+
+    }
+
+    void Update ()
+    {
+        if (m_Button) m_Button.interactable = Advertisement.IsReady(placementId);
+    }
+
+    void ShowAd ()
+    {
+        var options = new ShowOptions();
+        options.resultCallback = HandleShowResult;
+
+        Advertisement.Show(placementId, options);
+    }
+
+    void HandleShowResult (ShowResult result)
+    {
+        if(result == ShowResult.Finished) {
+        Debug.Log("Video completed - Offer a reward to the player");
+
+        }else if(result == ShowResult.Skipped) {
+            Debug.LogWarning("Video was skipped - Do NOT reward the player");
+
+        }else if(result == ShowResult.Failed) {
+            Debug.LogError("Video failed to show");
+        }
+    }
+}
+```
 
 4. Press __Play__ in the Unity Editor to test the Ads button integration.
 
