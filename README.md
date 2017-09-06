@@ -211,13 +211,10 @@ For further guidance, see the [Unity Ads forum](http://forum.unity3d.com/forums/
 Use settings to modify placements and other game-specific settings in your project. (See [Unity Ads documentation](http://unityads.unity3d.com/help/monetization/placements) for further information on placements.)
 
 1. In your web browser, navigate to the [Unity Ads Dashboard](https://dashboard.unityads.unity3d.com/), using your Unity Developer Network [UDN](https://id.unity.com/account/new) Account, and locate the project for your game. <br/> <br/>
-
     ![Unity Ads Dashboard with project selection highlighted](https://docs.unity3d.com/uploads/Main/DashSelectProject.png "Unity Ads Dashboard with project selection highlighted")
 
 2. Select an applicable platform (iOS or Android). <br/><br/> 
-
     ![Unity Ads Dashboard with platform selection highlighted](https://docs.unity3d.com/uploads/Main/DashSelectStore.png "Unity Ads Dashboard with platform selection highlighted")
 
 3. Select placement. (See [Unity Ads documentation](http://unityads.unity3d.com/help/monetization/placements).) <br/><br/> 
-
     ![Unity Ads Dashboard showing placement information](https://docs.unity3d.com/uploads/Main/DashSelectPlacement.png "Unity Ads Dashboard showing placement information")
